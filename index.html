@@ -442,8 +442,8 @@ a{color:inherit}
     <section class="page" data-page="work" aria-label="Work">
       <div class="title"><i></i><div><h2>My <b>work</b></h2><p class="note">A sample of my projects</p></div>
         <div class="seg" role="tablist" aria-label="Project type">
-          <button role="tab" data-g="dev" class="on">&lt;/&gt; Developer</button>
-          <button role="tab" data-g="video">▶ Video editor</button>
+          <button role="tab" data-g="dev">&lt;/&gt; Developer</button>
+          <button role="tab" data-g="video" class="on">▶ Video editor</button>
         </div>
       </div>
       <div class="work">
@@ -501,12 +501,13 @@ const projects=[
   {g:'video',s:'UGC ads',t:'Skin-Care Ad',k:'Short-form · UGC',v:'assets/skincare.mp4',p:'assets/skincare.jpg',th:'assets/skincare-th.jpg',vert:1,d:'A "worth the hype?" hook into a get-ready-with-me routine, with serif title cards, ingredient callouts (glycerin + vitamin E) and a before/after bubble.',tags:['UGC ads','Skincare','Ingredient callouts']},
   {g:'video',s:'UGC ads',t:'Night Haven',k:'Short-form · 2 ads',v:'assets/nighthaven-02.mp4',p:'assets/nighthaven-02.jpg',th:'assets/nighthaven-02-th.jpg',vert:1,d:'Hook-and-benefits plus an ingredients and real-reviews cut, with motion graphics.',tags:['Product ads','Motion graphics','Reviews']},
   {g:'video',s:'UGC ads',t:'Mimane Glow',k:'Short-form · 3 hook versions',v:'assets/mimane-01.mp4',p:'assets/mimane-01.jpg',th:'assets/mimane-01-th.jpg',vert:1,d:'One haircare ad in three versions, each with a different 3-second hook, voiceover-led cuts matched to the words, phrase captions and #ad up front.',tags:['UGC ads','Hook testing','Phrase captions']},
+  {g:'video',s:'Motion graphics',t:'Gambit Hair Cream',k:'Short-form · Product ad · Concept',v:'assets/gambit-ad.mp4',p:'assets/gambit-ad.jpg',th:'assets/gambit-ad-th.jpg',vert:1,d:'A 29-second animated product ad built entirely from the brand website,with no filmed footage: kinetic typography, a liquid transition, a 3D-style product reveal, glass ingredient cards, animated pricing and sound design. Concept piece, not affiliated with the brand.',tags:['Motion graphics','Product ad','Kinetic typography','Sound design']},
   {g:'video',s:'Documentaries',t:'FM Fight Recaps',k:'Long-form · YouTube',v:'assets/fight-ditcheva.mp4',p:'assets/fight-ditcheva.jpg',th:'assets/fight-ditcheva-th.jpg',d:'10+ minute recaps with voiceover, slow-mo replays and a branded end card.',tags:['YouTube','Voiceover','Slow-mo']},
   {g:'video',s:'Documentaries',t:'History Documentary',k:'Long-form · YouTube · 9 min',v:'assets/doc-empire.mp4',p:'assets/doc-empire.jpg',th:'assets/doc-empire-th.jpg',d:'How the Dutch trading empire gave way to the British: period scenes built from AI art, voiceover-led pacing, slow camera moves and phrase captions.',tags:['Documentary','AI visuals','Voiceover','Captions']},
 ];
 const feature=document.getElementById('feature'), list=document.getElementById('list');
 const gname={dev:'Developer projects',video:'Video editing projects'};
-let group='dev';
+let group='video';
 function showGroup(g){
   group=g;
   document.querySelectorAll('.seg button').forEach(b=>{b.classList.toggle('on',b.dataset.g===g);b.setAttribute('aria-selected',b.dataset.g===g)});
@@ -533,7 +534,7 @@ function pick(i){
     +`<div class="tags">${pr.tags.map(t=>`<span>${t}</span>`).join('')}</div>`
     +(pr.url?`<a class="btn red" style="align-self:flex-start;padding:10px 20px;min-height:40px;font-size:16px" href="${pr.url}" target="_blank" rel="noopener">Visit ${pr.url.replace(/https?:\/\/(www\.)?/,'')} ↗</a>`+'</div>':'</div>');
 }
-showGroup('dev');
+showGroup('video');
 </script>
 </body>
 </html>
