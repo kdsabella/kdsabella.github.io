@@ -245,29 +245,110 @@ a{color:inherit}
   .vbody .media.v{width:64%;height:auto;align-self:center}
   .vbody .ft h3{font-size:30px}
 }
+
+/* ===== home: top bar, value headline, devices, proof strip ===== */
+.home2{display:grid;grid-template-rows:auto minmax(0,1fr) auto}
+.top{display:flex;align-items:center;gap:22px;padding:20px 44px;border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:12px}
+.brand .av{position:relative;width:46px;height:46px;border-radius:50%;background:var(--red);overflow:hidden;flex:none}
+.brand b{display:block;font-family:Oswald,sans-serif;font-size:22px;letter-spacing:.1em;line-height:1}
+.brand span{font-size:12px;color:var(--muted)}
+.nav{margin-left:auto;display:flex;gap:2px}
+.nav button{font-family:Oswald,sans-serif;font-size:16px;letter-spacing:.1em;text-transform:uppercase;padding:9px 14px;border-radius:999px;color:var(--muted);transition:.2s}
+.nav button:hover{color:var(--navy);background:var(--cream)}
+.avail{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:#1B6B43;background:#E8F5ED;padding:8px 14px;border-radius:999px;white-space:nowrap}
+.avail i{width:8px;height:8px;border-radius:50%;background:#2E9E63;box-shadow:0 0 0 4px rgba(46,158,99,.2)}
+.hbody{display:grid;grid-template-columns:1.06fr 1fr;gap:36px;padding:0 44px 0 56px;align-items:center;min-height:0}
+.lead{display:flex;flex-direction:column;align-items:flex-start}
+.kick{font-family:Oswald,sans-serif;font-size:16px;letter-spacing:.18em;text-transform:uppercase;color:var(--red)}
+.lead h1{font-family:Oswald,sans-serif;font-weight:700;font-size:clamp(38px,4.4vw,58px);line-height:1.04;text-transform:uppercase;margin:14px 0 16px;letter-spacing:.005em}
+.lead h1 b{color:var(--red)}
+.lead .p{max-width:500px;font-size:17px;margin-bottom:22px}
+.links{display:flex;gap:18px;flex-wrap:wrap;margin-top:20px;font-size:14px;font-weight:500}
+.links a{color:var(--muted);text-decoration:none;border-bottom:1px solid #D9D3C8;padding-bottom:2px;transition:.2s}
+.links a:hover{color:var(--red);border-color:var(--red)}
+.show{position:relative;height:100%;min-height:0}
+.proof{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);background:var(--cream)}
+.proof div{padding:18px 44px;display:grid;grid-template-columns:auto 1fr;column-gap:16px;align-items:center}
+.proof div+div{border-left:1px solid var(--line)}
+.proof b{grid-row:span 2;font-family:Oswald,sans-serif;font-size:46px;line-height:1;color:var(--red)}
+.proof strong{font-family:Oswald,sans-serif;font-size:17px;letter-spacing:.06em;text-transform:uppercase;align-self:end}
+.proof span{font-size:13px;color:var(--muted);align-self:start}
+.home2 .arc{display:none}
+@media (max-width:820px){
+  .home2{display:block;overflow-y:auto;padding-bottom:72px}
+  .top{padding:14px 18px;gap:10px}
+  .brand span{white-space:nowrap}
+  .nav{display:none}
+  .avail{margin-left:auto;font-size:12px;padding:7px 11px}
+  .avail i{display:none}
+  .hbody{display:block;padding:22px 20px 26px}
+  .show{margin-top:26px}
+  .kick{font-size:14px;letter-spacing:.14em}
+  .lead h1{font-size:36px}
+  .lead .p{font-size:16px}
+  .show{height:290px}
+  .proof{grid-template-columns:1fr}
+  .proof div{padding:14px 20px}.proof div+div{border-left:0;border-top:1px solid var(--line)}
+  .proof b{font-size:36px}
+  .home2 .arc{display:flex}
+}
+
+/* option A layout on option B's dark background */
+.home2{background:var(--navy);color:#fff}
+.home2 .top{border-bottom-color:rgba(255,255,255,.1)}
+.home2 .brand span{color:#9EA3C4}
+.home2 .nav button{color:#C9CCE0}
+.home2 .nav button:hover{color:#fff;background:rgba(255,255,255,.09)}
+.home2 .avail{color:#A6E8C3;background:rgba(46,158,99,.16);border:1px solid rgba(46,158,99,.35)}
+.home2 .avail i{background:#3CC47E;box-shadow:0 0 0 4px rgba(60,196,126,.2)}
+.home2 .lead h1{color:#fff}
+.home2 .kick,.home2 .lead h1 b{color:#E86A6F}
+.home2 .lead .p{color:#C9CCE0}
+.home2 .btn.ghost{border-color:rgba(255,255,255,.55);color:#fff}
+.home2 .links a{color:#C9CCE0;border-bottom-color:rgba(255,255,255,.28)}
+.home2 .links a:hover{color:#E86A6F;border-color:#E86A6F}
+.home2 .show::before{content:"";position:absolute;left:8%;right:-6%;top:6%;bottom:2%;border-radius:50%;background:radial-gradient(circle,rgba(168,54,59,.5) 0%,rgba(168,54,59,0) 68%)}
+.home2 .proof{background:#1A1E3C;border-top-color:rgba(255,255,255,.08)}
+.home2 .proof div+div{border-color:rgba(255,255,255,.08)}
+.home2 .proof b{color:#E86A6F}
+.home2 .proof span{color:#9EA3C4}
+@media (max-width:820px){.home2 .arc{border-top:1px solid rgba(255,255,255,.12)}}
+
+/* work shown as devices in 3D: two browser windows and a phone playing the ad */
+.show.dev{perspective:1500px}
+.scene3d{position:absolute;inset:0;transform-style:preserve-3d;transform:rotateY(-16deg) rotateX(7deg);transition:transform .3s ease-out}
+.win{position:absolute;display:block;border-radius:12px;overflow:hidden;background:#fff;border:1px solid rgba(255,255,255,.2);box-shadow:0 30px 70px rgba(0,0,0,.55)}
+.win .chrome{display:flex;align-items:center;gap:6px;height:28px;padding:0 12px;background:#E7E4EE}
+.win .chrome i{width:9px;height:9px;border-radius:50%;background:#FF5F57}
+.win .chrome i:nth-child(2){background:#FEBC2E}.win .chrome i:nth-child(3){background:#28C840}
+.win .chrome em{flex:1;margin-left:10px;height:16px;line-height:16px;padding:0 10px;border-radius:8px;background:#fff;font-style:normal;font-size:10px;color:#777}
+.win img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;object-position:top}
+.win.back{left:-4%;top:6%;width:70%;transform:translateZ(-90px)}
+.win.front{left:4%;top:40%;width:72%;transform:translateZ(20px)}
+.phone{position:absolute;right:3%;top:9%;height:76%;aspect-ratio:9/18.4;display:block;border-radius:36px;background:#0B0C12;padding:9px;box-shadow:0 36px 80px rgba(0,0,0,.6),inset 0 0 0 2px #2D3050;transform:translateZ(70px)}
+.phone video{display:block;width:100%;height:100%;object-fit:cover;border-radius:27px}
+.phone .notch{position:absolute;left:50%;top:17px;width:72px;height:19px;margin-left:-36px;border-radius:12px;background:#0B0C12;z-index:2}
+.chip3{position:absolute;padding:8px 15px;border-radius:999px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.28);backdrop-filter:blur(12px);font-family:Oswald,sans-serif;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#fff;white-space:nowrap;box-shadow:0 12px 26px rgba(0,0,0,.35)}
+.chip3.c1{left:0;bottom:5%;transform:translateZ(60px)}
+.chip3.c2{right:30%;top:9%;transform:translateZ(100px)}
+@media (max-width:820px){
+  .show.dev{height:330px}
+  .scene3d{transform:rotateY(-10deg) rotateX(4deg)}
+  .win .chrome{height:20px}.win .chrome em{height:12px;line-height:12px;font-size:8px}
+  .phone{border-radius:26px;padding:6px}.phone video{border-radius:20px}
+  .phone .notch{width:50px;height:13px;margin-left:-25px;top:12px}
+  .chip3{font-size:11px;padding:6px 11px}
+}
 </style>
 </head>
 <body>
 <div class="stage">
 
 <!-- ================= HOME ================= -->
-<main class="card home" id="home" aria-label="Home">
-  <span class="bar l"></span><span class="bar r"></span>
-  <section class="hero">
-    <span class="eyebrow">Hi there!</span>
-    <h1 class="h1">I'm <b>Ken</b></h1>
-    <span class="tag">Developer | Editor | Creator</span>
-    <span class="tag red">Full-stack .NET · Angular · React</span>
-    <p class="p" style="max-width:520px;font-size:17px">I build the software your business runs on, and the short videos that get people to try it.</p>
-    <div class="row">
-      <button class="btn dark" data-go="about">More about me</button>
-      <button class="btn ghost" data-go="work">See my work</button>
-    </div>
-  </section>
-  <div class="side">
-    <div class="orbit">
-      <span class="ring"></span>
-      <div class="circle"><svg aria-label="Cartoon avatar of Ken wearing headphones and glasses, holding a laptop" role="img" class="avatar-svg" viewbox="0 0 400 600">
+<main class="card home2" id="home" aria-label="Home">
+  <header class="top">
+    <div class="brand"><span class="av"><svg aria-label="Cartoon avatar of Ken wearing headphones and glasses, holding a laptop" role="img" class="avatar-svg" viewbox="0 0 400 600">
 <ellipse class="shadow" cx="200" cy="584" fill="#5A1215" rx="120" ry="13"></ellipse>
 <g class="bob">
 <!-- legs -->
@@ -341,11 +422,43 @@ a{color:inherit}
 <path d="M182 238 Q200 254 218 238" fill="none" stroke="#7A3B2E" stroke-linecap="round" stroke-width="5"></path>
 </g>
 </g>
-</svg></div>
-      <nav class="arc" aria-label="Sections"><button class="ic" data-go="home" aria-label="Home"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg><span class="lb">Home</span></button><button class="ic" data-go="about" aria-label="About"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg><span class="lb">About</span></button><button class="ic" data-go="services" aria-label="Services"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/><path d="M3 17.5l9 5 9-5" opacity=".55"/></svg><span class="lb">Services</span></button><button class="ic" data-go="work" aria-label="Work"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5V7"/><path d="M3 13h18"/><path d="M11 13h2v2h-2z" fill="currentColor"/></svg><span class="lb">Work</span></button><button class="ic" data-go="contact" aria-label="Contact"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span class="lb">Contact</span></button></nav>
+</svg></span><div><b>KEN</b><span>Developer &middot; Video editor</span></div></div>
+    <nav class="nav" aria-label="Sections">
+      <button data-go="about">About</button><button data-go="services">Services</button><button data-go="work">Work</button><button data-go="contact">Contact</button>
+    </nav>
+    <span class="avail"><i></i>Available for projects</span>
+  </header>
+  <div class="hbody">
+    <section class="lead">
+      <span class="kick">Full-stack developer &amp; video editor</span>
+      <h1>I build the software your business runs on, and the <b>videos that sell it.</b></h1>
+      <p class="p">Web apps in .NET, Angular and React, plus the short-form ads and promos that get people to try them. One freelancer from first commit to launch video.</p>
+      <div class="row">
+        <button class="btn red" data-go="work">See my work</button>
+        <button class="btn ghost" data-go="contact">Get in touch</button>
+      </div>
+      <div class="links">
+        <a href="https://www.upwork.com/freelancers/~012627e7f22e49fad2" target="_blank" rel="noopener">Upwork &nearr;</a>
+        <a href="https://github.com/kdsabella" target="_blank" rel="noopener">GitHub &nearr;</a>
+        <a href="mailto:kensabella04@gmail.com">kensabella04@gmail.com</a>
+      </div>
+    </section>
+    <div class="show dev" aria-label="Selected work">
+      <div class="scene3d" id="scene3d">
+        <a class="win back" href="#work"><span class="chrome"><i></i><i></i><i></i><em>linkhq.com</em></span><img src="assets/linkhq-thumbnail.png" alt="LinkHQ"></a>
+        <a class="win front" href="#work"><span class="chrome"><i></i><i></i><i></i><em>kikliq.com</em></span><img src="assets/kikliq-thumbnail.png" alt="Kikliq"></a>
+        <a class="phone" href="#work"><span class="notch"></span><video src="assets/gambit-ad.mp4" poster="assets/gambit-ad.jpg" autoplay muted loop playsinline></video></a>
+        <span class="chip3 c1">2 live SaaS products</span>
+        <span class="chip3 c2">&#9654; Motion graphics ad</span>
+      </div>
     </div>
-    <span class="hint">Click an icon to explore</span>
   </div>
+  <div class="proof">
+    <div><b>2</b><strong>Live SaaS products</strong><span>Kikliq and LinkHQ, built end to end</span></div>
+    <div><b>6</b><strong>Video projects</strong><span>UGC ads, motion graphics, documentaries</span></div>
+    <div><b>1</b><strong>Person for both</strong><span>Code and video with no handoff</span></div>
+  </div>
+  <nav class="arc" aria-label="Sections"><button class="ic" data-go="home" aria-label="Home"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg><span class="lb">Home</span></button><button class="ic" data-go="about" aria-label="About"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg><span class="lb">About</span></button><button class="ic" data-go="services" aria-label="Services"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/><path d="M3 17.5l9 5 9-5" opacity=".55"/></svg><span class="lb">Services</span></button><button class="ic" data-go="work" aria-label="Work"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5V7"/><path d="M3 13h18"/><path d="M11 13h2v2h-2z" fill="currentColor"/></svg><span class="lb">Work</span></button><button class="ic" data-go="contact" aria-label="Contact"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span class="lb">Contact</span></button></nav>
 </main>
 
 <!-- ================= INNER PAGES ================= -->
@@ -517,7 +630,7 @@ const pages=['about','services','work','contact'];
 const arcIcons=[...document.querySelectorAll('.arc .ic')];
 function arc(){
   if(matchMedia('(max-width:820px)').matches){arcIcons.forEach(i=>{i.style.left='';i.style.top=''});return}
-  const r=0.5+34/document.querySelector('.orbit').offsetWidth;
+  const ob=document.querySelector('.orbit'); if(!ob) return; const r=0.5+34/ob.offsetWidth;
   arcIcons.forEach((ic,k)=>{const a=(-60+120*k/(arcIcons.length-1))*Math.PI/180;ic.style.left=(50+Math.cos(a)*r*100)+'%';ic.style.top=(50+Math.sin(a)*r*100)+'%'});
 }
 arc();addEventListener('resize',arc);
@@ -581,6 +694,14 @@ document.querySelectorAll('.seg button').forEach(b=>b.onclick=()=>{group=b.datas
 addEventListener('keydown',e=>{if(e.key==='Escape')closeView()});
 addEventListener('hashchange',closeView);
 render();
+
+// home: the device scene leans toward the pointer; the ad keeps playing whenever home is showing
+(function(){const sc=document.getElementById('scene3d'), box=sc&&sc.parentElement, v=sc&&sc.querySelector('video'), home=document.getElementById('home'); if(!sc) return;
+  box.addEventListener('mousemove',e=>{const r=box.getBoundingClientRect(), x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5; sc.style.transform=`rotateY(${-16+x*14}deg) rotateX(${7-y*10}deg)`});
+  box.addEventListener('mouseleave',()=>sc.style.transform='');
+  if(!home.classList.contains('off')) v.play().catch(()=>{});
+  new MutationObserver(()=>{if(!home.classList.contains('off')) v.play().catch(()=>{})}).observe(home,{attributes:true,attributeFilter:['class']});
+})();
 </script>
 </body>
 </html>
